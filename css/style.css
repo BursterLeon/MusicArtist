@@ -245,3 +245,59 @@ textarea {
   }
 }
 
+/*
+   * Code for buttons and header
+   */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wren Evans</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header {
+    background-color: #f8f8f8; /* Light background color */
+    padding: 20px;
+    text-align: center; /* Centers all text inside the header */
+}
+    /* Center the navigation menu */
+nav ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    text-align: center; /* Centers the navigation */
+}
+
+/* Make each list item a block element and center them */
+nav ul li {
+    display: inline-block; /* Allows buttons to be in a row but still  centered */
+    margin: 0 15px; /* Adds spacing between buttons */
+}
+
+/* Style the links (buttons) */
+nav ul li a {
+    text-decoration: none; /* Removes underline */
+    color: #333; /* Sets text color */
+    font-size: 1.2em; /* Adjusts font size */
+    padding: 10px 20px; /* Adds padding inside buttons */
+    background-color: #f8f8f8; /* Light background for button effect */
+    border-radius: 5px; /* Rounds the corners */
+    transition: 0.3s; /* Smooth hover effect */
+}
+
+/* Hover effect for buttons */
+nav ul li a:hover {
+    background-color: #ddd; /* Changes background on hover */
+}
+   </style>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Wren Evans</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tour.html">Tour Dates</a></li>
+                <li><a href="merch.html">Merch</a></li>
+            </ul>
+        </nav>
+    </header>
