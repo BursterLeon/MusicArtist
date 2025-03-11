@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wren Evans Tour Dates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .date-box {
+            text-align: center;
+            font-weight: bold;
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 80px;
+        }
+        .city {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .venue {
+            color: gray;
+        }
+        .extra-info {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tour Dates</h2>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Venue</th>
+        </tr>
+        <tr>
+            <td class="date-box">
+                <div>Sep</div>
+                <div style="font-size: 24px;">9</div>
+                <div>2023</div>
+            </td>
+            <td>
+                <div class="city">Hanoi, Viet Nam</div>
+            </td>
+            <td>
+                <div class="venue">Vinhomes Ocean Park 2</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="date-box">
+                <div>May</div>
+                <div style="font-size: 24px;">20</div>
+                <div>2023</div>
+            </td>
+            <td>
+                <div class="city">Ho Chi Minh City, Viet Nam</div>
+            </td>
+            <td>
+                <div class="venue">SECC - Saigon Exhibition And Convention Center</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="date-box">
+                <div>Dec</div>
+                <div style="font-size: 24px;">18</div>
+                <div>2022</div>
+            </td>
+            <td>
+                <div class="city">Ho Chi Minh City, Viet Nam</div>
+            </td>
+            <td>
+                <div class="venue">SECC - Saigon Exhibition And Convention Center</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="date-box">
+                <div>May</div>
+                <div style="font-size: 24px;">21</div>
+                <div>2022</div>
+            </td>
+            <td>
+                <div class="city">Ho Chi Minh City, Viet Nam</div>
+            </td>
+            <td>
+                <div class="venue">Area B - Dormitory of Vietnam National University HCMC</div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
