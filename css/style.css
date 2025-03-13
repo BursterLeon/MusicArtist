@@ -21,6 +21,9 @@ body {background-color:#D22B2B;}
   text-decoration: none;
   font-size: 22px;
 }
+.topnav-right {
+  background-color: transparent;
+  overflow: hidden;}
 html {
   color: #030303;
   font-size: 1em;
