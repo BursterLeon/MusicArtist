@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join | Wren Evans</title>
+  <link rel="stylesheet" href="../css/style.css" />
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="brand" href="../index.html">WREN EVANS</a>
+      <div class="nav-links">
+        <a href="../html/Music.html">MUSIC</a>
+          <a href="../html/Tour.html">TOURS</a>
+        <a href="#watch">WATCH</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#about">ABOUT</a>
+        <a href="../html/Gallery.html">GALLERY</a>
+        <a href="../html/Store.html">STORE</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="form-container">
+    <h2>Join the Wren Evans Fam</h2>
+
+<!--    Join Form-->
+    <form id="join-form" method="post" action="/signup">
+      <div class="form-group" >
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" name="password" required />
+      </div>
+      <button type="submit">Join</button>
+    </form>
+
+<!--    Login Form-->
+    <form id="login-form" style="display: none;" method="post" action="/login">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="you@example.com" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Password" name="password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="toggle-link" onclick="toggleForms()">Already a member? Log in</div>
+
+    <div class="socials">
+      <p>Follow Wren:</p>
+      <a href="https://instagram.com" target="_blank" title="Instagram">📸</a>
+      <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+      <a href="https://youtube.com" target="_blank" title="YouTube">▶️</a>
+      <a href="https://tiktok.com" target="_blank" title="TikTok">🎵</a>
+    </div>
+  </section>
+
+  <script>
+    function toggleForms() {
+      const joinForm = document.getElementById('join-form');
+      const loginForm = document.getElementById('login-form');
+      const toggleLink = document.querySelector('.toggle-link');
+
+      if (joinForm.style.display === 'none') {
+        joinForm.style.display = 'block';
+        loginForm.style.display = 'none';
+        toggleLink.textContent = 'Already a member? Log in';
+      } else {
+        joinForm.style.display = 'none';
+        loginForm.style.display = 'block';
+        toggleLink.textContent = 'New here? Join the fam';
+      }
+    }
+  </script>
+</body>
+</html>
