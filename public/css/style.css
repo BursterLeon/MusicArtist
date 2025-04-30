@@ -1,260 +1,183 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-/* website background */
-body {background-color:#D22B2B;}
-/*nav bar*/
-.topnav-right a {
-  float: right;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 22px;
+/* General Reset & Font */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #D22B2B;
+  color: white;
 }
-.topnav-right {
-  background-color: transparent;
-  overflow: hidden;}
+
 html {
-  color: #030303;
-  font-size: 1em;
-  line-height: 1.4;
+  scroll-behavior: smooth;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #52575e;
-  text-shadow: none;
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+.brand {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+.nav-links a {
+  margin-left: 20px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+.nav-links a:hover {
+  color: #ffbaba;
 }
 
-/*
- * Remove default fieldset styles.
- */
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
 
-fieldset {
-  border: 0;
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tours Section */
+.tours {
+  padding: 40px;
+  text-align: center;
+}
+
+.tours h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.tours p {
+  font-size: 18px;
+  color: #eee;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin: 10px;
+  }
+
+  .video-wrapper iframe {
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* --- TOURS PAGE STYLES --- */
+
+/* Font match: using sans-serif similar to index page */
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background-color: #D22B2B;
   margin: 0;
-  padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
+/* Navbar for tour.html */
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 20px;
   margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+nav ul li {
+  margin: 0 15px;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.clearfix::after {
-  clear: both;
+.brand {
+  flex: 1;
+  font-size: 26px;
+  font-weight: bold;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+.heading {
+  background: url('concert-bg.jpg') center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+.heading h1 {
+  font-size: 36px;
+  font-weight: bold;
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+.tour-dates {
+  padding: 30px;
 }
 
+.tour {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tour p {
+  margin: 5px 10px;
+  font-size: 18px;
+}
+
+button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: white;
+  color: #D22B2B;
+}
