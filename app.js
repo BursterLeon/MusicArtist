@@ -20,8 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'password',
-  database: 'database'
+  password: 'xotbax-wynMa5-fawsux',
+  database: 'user_auth_db'
 });
 db.connect((err) => {
   if (err) {
@@ -89,6 +89,26 @@ app.post('/login', (req, res) => {
         // Passwords do not match
         res.status(401).json({ success: false, message: 'Wrong email or password.' });
       }
+  });
+});
+
+//Route to the Contact form
+app.post('/contact', (req, res) => {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: 'All fields are required.' });
+  }
+
+  const sql = 'INSERT INTO contact_form (name, email, message) VALUES (?, ?, ?)';
+  db.query(sql, [name, email, message], (err, result) => {
+    if (err) {
+      console.error('Error saving message:', err.message);
+      return res.status(500).json({ message: 'Failed to send message.' });
+    }
+
+    console.log('New message from contact form:', { name, email });
+    res.status(200).send('Thank you for reaching out! Your message has been received.');
   });
 });
 

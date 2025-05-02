@@ -21,6 +21,7 @@
   <meta name="theme-color" content="#fafafa">
 
   <!-- Fonts & CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -28,23 +29,37 @@
 
   <!-- NAVIGATION -->
   <header>
-    <nav class="navbar">
-      <a class="brand" href="index.html">WREN EVANS</a>
-      <div class="nav-links">
-        <a href="./html/Music.html">MUSIC</a>
-        <a href="./html/Tour.html">TOURS</a>
-        <a href="#watch">WATCH</a>
-        <a href="./html/Join.html">JOIN</a>
-        <a href="#contact">CONTACT</a>
-        <a href="#about">ABOUT</a>
-        <a href="./html/Gallery.html">GALLERY</a>
-        <a href="./html/Store.html">STORE</a>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">WREN EVANS</a>
+
+        <!-- Toggle button for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible nav links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="./html/Music.html">MUSIC</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/MusicNew.html">MUSICNEW</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/Tour.html">TOURS</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/Watch.html">WATCH</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/Join.html">JOIN</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/Contact.html">CONTACT</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/About.html">ABOUT</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/Gallery.html">GALLERY</a></li>
+            <li class="nav-item"><a class="nav-link" href="./html/Store.html">STORE</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <h1>STREAM CỨU LẤY ÂM NHẠC!</h1>
       <div class="video-wrapper">
@@ -55,12 +70,14 @@
       </div>
     </section>
 
+    <!-- Tours Section -->
     <section class="tours">
       <h2>TOURS</h2>
       <p>No shows listed yet.</p>
     </section>
   </main>
 
-  <script src="js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
