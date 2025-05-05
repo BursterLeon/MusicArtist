@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join | Wren Evans</title>
+
+  <!-- Optional: Add this for responsive icons if you're using them -->
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand" href="../index.html">WREN EVANS</a>
+
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible nav links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../html/Music.html">MUSIC</a></li>
+            <li class="nav-item"><a class="nav-link" href="../html/Music.html">MUSIC</a></li>
+            <li class="nav-item"><a class="nav-link" href="../html/Tour.html">TOURS</a></li>
+            <li class="nav-item"><a class="nav-link" href="../html/Watch.html">WATCH</a></li>
+            <li class="nav-item"><a class="nav-link" href="../html/Contact.html">CONTACT</a></li>
+            <li class="nav-item"><a class="nav-link" href="../html/About.html">ABOUT</a></li>
+            <li class="nav-item"><a class="nav-link" href="../html/Gallery.html">GALLERY</a></li>
+            <li class="nav-item"><a class="nav-link" href="../html/Store.html">STORE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </header>
+
+  <section class="form-container">
+    <h2>Join the Wren Evans Fam</h2>
+
+    <!-- Join Form -->
+    <form id="join-form" >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" name="password" required />
+      </div>
+      <button type="submit">Join</button>
+    </form>
+
+    <div id="successMessage" class="alert alert-success" role="alert" style="display: none;">
+  Account created successfully!
+</div>
+
+
+    <!-- Login Form -->
+    <form id="login-form" style="display: none;">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="you@example.com" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Password" name="password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+
+     <div id="loginMessage" class="alert alert-success" role="alert" style="display: none;">
+  Successfully logged in!
+</div>
+
+    <div class="toggle-link" onclick="toggleForms()">Already a member? Log in</div>
+
+    <div class="socials">
+      <p>Follow Wren:</p>
+      <a href="https://www.instagram.com/wrenevans____/reels/?hl=en" target="_blank" title="Instagram">📸</a>
+    </div>
+  </section>
+
+
+
+
+
+
+<!-- Bootstrap Bundle JS (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- form handler -->
+<script>
+  //LOGIN
+    function toggleForms() {
+      const joinForm = document.getElementById('join-form');
+      const loginForm = document.getElementById('login-form');
+      const toggleLink = document.querySelector('.toggle-link');
+
+      if (joinForm.style.display === 'none') {
+        joinForm.style.display = 'block';
+        loginForm.style.display = 'none';
+        toggleLink.textContent = 'Already a member? Log in';
+      } else {
+        joinForm.style.display = 'none';
+        loginForm.style.display = 'block';
+        toggleLink.textContent = 'New here? Join the fam';
+      }
+    }
+
+    function toggleNav() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    //JOIN
+    document.getElementById('join-form').addEventListener('submit', async function (e) {
+      e.preventDefault(); // Stop the form from submitting the default way
+
+      const form = e.target;
+      const data = {
+        username: form.username.value,
+        email: form.email.value,
+        password: form.password.value
+      };
+
+      try {
+        const response = await fetch('/signup', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+      // Show success message
+      const successMessage = document.getElementById('successMessage');
+      successMessage.style.display = 'block';
+
+      //hide success message after a few seconds
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 5000);
+
+      form.reset(); //clear form
+    } else {
+      alert(result.message);
+    }
+      } catch (err) {
+        alert('An error occurred. Please try again.');
+        console.error(err);
+      }
+    });
+
+    //LOGIN
+    document.getElementById('login-form').addEventListener('submit', async function (e) {
+  e.preventDefault(); // Prevent default form submission
+
+  const form = e.target;
+  const data = {
+    email: form.email.value,
+    password: form.password.value
+  };
+
+  try {
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    const loginMessage = document.getElementById('loginMessage');
+
+    if (response.ok) {
+      // Success
+      loginMessage.className = 'alert alert-success';
+      loginMessage.textContent = 'Login successful!';
+      loginMessage.style.display = 'block';
+
+      // Optionally hide after a few seconds
+      setTimeout(() => {
+        loginMessage.style.display = 'none';
+      }, 4000);
+
+      form.reset(); // Clear the form
+
+      // Optional: redirect the user
+      // window.location.href = '/dashboard';
+    } else {
+      // Error from server
+      loginMessage.className = 'alert alert-danger';
+      loginMessage.textContent = result.message || 'Login failed.';
+      loginMessage.style.display = 'block';
+    }
+  } catch (err) {
+    console.error(err);
+    const loginMessage = document.getElementById('loginMessage');
+    loginMessage.className = 'alert alert-danger';
+    loginMessage.textContent = 'Something went wrong. Please try again.';
+    loginMessage.style.display = 'block';
+  }
+});
+</script>
+
+</body>
+</html>
