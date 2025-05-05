@@ -110,14 +110,6 @@ html {
 
 /* --- TOURS PAGE STYLES --- */
 
-/* Font match: using sans-serif similar to index page */
-body {
-  font-family: 'Arial', sans-serif;
-  color: white;
-  background-color: #D22B2B;
-  margin: 0;
-}
-
 /* Navbar for tour.html */
 nav ul {
   display: flex;
@@ -534,3 +526,102 @@ h1 {
   margin: 0;
   text-align: left;
 }
+
+/*GALLERY*/
+
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery {
+      flex: 1 1 calc(100% - 40px); /* Full width on small screens */
+      max-width: 550px;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .desc {
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (min-width: 600px) {
+      .gallery {
+        flex: 1 1 calc(50% - 40px); /* 2 per row on tablets */
+      }
+    }
+
+    @media (min-width: 900px) {
+      .gallery {
+        flex: 1 1 calc(33.33% - 40px); /* 3 per row on desktops */
+      }
+    }
+
+
+/*STORE*/
+    #merch {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .store-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .item-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .item-card h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .item-card p.price {
+      font-weight: bold;
+      color: #222;
+    }
+
+    .item-card button {
+      background-color: #222;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .item-card button:hover {
+      background-color: #444;
+    }

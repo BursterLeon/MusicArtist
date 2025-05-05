@@ -10,6 +10,7 @@ const app = express();
 const PORT = 3000;
 
 // Middleware to parse form data
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //serve static files from the public directory
@@ -108,7 +109,7 @@ app.post('/contact', (req, res) => {
     }
 
     console.log('New message from contact form:', { name, email });
-    res.status(200).send('Thank you for reaching out! Your message has been received.');
+    res.status(200).json({ message: 'Message sent successfully!' });
   });
 });
 
