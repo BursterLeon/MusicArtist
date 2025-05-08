@@ -21,8 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'xotbax-wynMa5-fawsux',
-  database: 'user_auth_db'
+  password: 'password',
+  database: 'databasename'
 });
 db.connect((err) => {
   if (err) {
